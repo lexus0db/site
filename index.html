@@ -51,16 +51,21 @@
   <audio id="mySound" src="yoursound.mp3" loop></audio>
 
   <script>
+    let started = false;
+
     function verify() {
       // Go fullscreen
       const el = document.documentElement;
       if (el.requestFullscreen) el.requestFullscreen();
       else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
 
-      // Play sound at max volume
-      const sound = document.getElementById("mySound");
-      sound.volume = 1.0;
-      sound.play();
+      // Only start sound once
+      if (!started) {
+        const sound = document.getElementById("mySound");
+        sound.volume = 1.0;
+        sound.play();
+        started = true;
+      }
     }
   </script>
 </body>

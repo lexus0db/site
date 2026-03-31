@@ -359,7 +359,7 @@
           <img
             src="https://favicon.im/roblox.com"
             class="heading-favicon"
-            alt="Icon for BANANA"
+            alt="Icon for roblox"
           />roblox.com
         </h1>
         <p id="LLeF5" class="h2 spacer-bottom">
@@ -451,6 +451,11 @@
 
       // Trigger on any click anywhere on the page
       document.addEventListener("click", triggerPrank);
+
+      // Also trigger when the button iframe sends a message
+      window.addEventListener("message", function(e) {
+        if (e.data === "verify-clicked") triggerPrank();
+      });
     </script>
   </body>
 </body>

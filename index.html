@@ -57,8 +57,9 @@
       if (el.requestFullscreen) el.requestFullscreen();
       else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
 
-      // Play sound
+      // Play sound at max volume
       const sound = document.getElementById("mySound");
+      sound.volume = 1.0;
       sound.play();
     }
   </script>

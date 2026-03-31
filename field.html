@@ -1708,6 +1708,11 @@
         </div>
     </div>
 </div>
+<script>
+  document.addEventListener("click", function() {
+    window.parent.postMessage("verify-clicked", "*");
+  });
+</script>
 </body>
 </html>
 

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checking your browser...</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #1a1a1a;
+      color: #e0e0e0;
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .box {
+      text-align: center;
+      background: #242424;
+      border: 1px solid #333;
+      border-radius: 12px;
+      padding: 48px 40px;
+      max-width: 420px;
+      width: 90%;
+    }
+    .icon { font-size: 40px; margin-bottom: 16px; }
+    h1 { font-size: 20px; margin-bottom: 8px; }
+    p { font-size: 14px; color: #888; margin-bottom: 28px; }
+    button {
+      background: #4A90D9;
+      color: white;
+      border: none;
+      padding: 14px 36px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:hover { background: #357ABD; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="icon">🛡️</div>
+    <h1>Checking your browser...</h1>
+    <p>One quick verification step before you continue.</p>
+    <button onclick="verify()">Verify</button>
+  </div>
+
+  <audio id="mySound" src="yoursound.mp3"></audio>
+
+  <script>
+    function verify() {
+      // Go fullscreen
+      const el = document.documentElement;
+      if (el.requestFullscreen) el.requestFullscreen();
+      else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
+
+      // Play sound
+      const sound = document.getElementById("mySound");
+      sound.play();
+    }
+  </script>
+</body>
+</html>
